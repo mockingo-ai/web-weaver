@@ -3,12 +3,12 @@ html, body{
 	padding: 0;
 }
 body {
-    font-family: "Playfair Display", Georgia, "Times New Roman", serif !important;
+    font-family: 'Gotu', sans-serif !important;
 }
 .header {
-	background-color: #d9edf7;
-    border-color: #bce8f1;
-    color: #31708f;
+	background-color: #000;
+    border-color: #000;
+    color: #fff;
     padding: 10px 10px 5px 10px;
 	-webkit-box-shadow: 0px 0px 5px 0px rgba(0,61,58,1);
 	-moz-box-shadow: 0px 0px 5px 0px rgba(0,61,58,1);
@@ -17,10 +17,18 @@ body {
 .font-bold {
 	font-weight: bold;
 }
+a#logo-link {
+	max-width: 100%;
+	display: inline-block;
+	color: #fff;
+} 
+a#logo-link:hover { 
+    text-decoration: none;
+	color: #fff;
+} 
 .footer {
 	margin-top: 50px;
 	margin-bottom: 50px;
-
     align-items: center;
     padding: 20px 0px;
     text-align: center;
