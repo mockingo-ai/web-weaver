@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MockingoEditor</title>
+	<link rel="shortcut icon" type="image/x-icon" href="/media/favicon.ico">
+
+	<link rel="stylesheet" type="text/css" href="/css/base.css">
+	<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+	<!-- External Libraries -->
+	<script type="text/javascript" src="/lib/jquery-3.4.1.min.js"></script>
+
+	<link rel="stylesheet" type="text/css"  href="/lib/codemirror.css">
+	<link rel="stylesheet" type="text/css" href="/theme/abcdef.css">
+	<script type="text/javascript" src="/lib/codemirror.js"></script>
+	<script type="text/javascript" src="/lib/code-mirror-javascript.js"></script>
+	<script type="text/javascript" src="/lib/active-line.js"></script>
+	<script type="text/javascript" src="/lib/matchbrackets.js"></script>
+
+	<script type="text/javascript" src="/lib/beautify.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.addons.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.addons.search.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.bbcode.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.bbcodemixed.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.handlebars.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.htmlmixed.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.javascript.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.twig.min.js"></script>
+	<script type="text/javascript" src="/lib/codemirror.mode.php.min.js"></script>
+</head>
+<body>
+
+	<div class="header">
+		<div class="row">
+			<div class="col">
+				<img src="/media/logo_green.png" style="height: 50px; width: 50px;">
+				<span class="font-bold">Mockingo</span>
+			</div>
+			<div class="col-6 text-center">
+				<h1 class="font-bold">Web Weaver</h1>
+			</div>
+			<div class="col"></div>
+		</div>
+	</div>
+
+	<div class="content">
+		<div class="row coder">
+			<div class="col-4 html-content">
+				<div class="editor-title text-center">HTML</div>
+				<textarea autocomplete="off" id="html-code-textarea" wrap="logical" spellcheck="false" style="display: none;">
+				</textarea>
+			</div>
+			<div class="col-4 css-content">
+				<div class="editor-title text-center">CSS</div>
+				<textarea autocomplete="off" id="css-code-textarea" wrap="logical" spellcheck="false" style="display: none;">
+				</textarea>
+			</div>
+			<div class="col-4 js-content">
+				<div class="editor-title text-center">JavaScript</div>
+				<textarea autocomplete="off" id="js-code-textarea" wrap="logical" spellcheck="false" style="display: none;">
+				</textarea>
+			</div>
+		</div>
+		<div id="renderer">
+			<div class="row text-center margin-top-bottom">
+				<input id="renderBtn" type="submit" name="renderBtn" class="btn btn-info" value="Show">
+			</div>
+			<div class="row margin-top-bottom">
+					<iframe width="100%" id="frameRenderer" src=""></iframe>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<hr>
+		<span style="color: #7a7a7a;">Mockingo Consulting Services - Just Superb!!!.</span>
+		<hr>
+	</div>
+
+
+	<!-- JS -->
+	<script type="text/javascript" src="/js/base.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
