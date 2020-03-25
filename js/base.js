@@ -18,9 +18,13 @@ jQuery(document).ready(function() {
     	autoFormatOnUncomment: true,
     	showAutoCompleteButton: true
 	});
-	editorHtml.setValue("");
-	editorHtml.focus("");
+	editorHtml.focus();
 	editorHtml.setOption("theme", "abcdef");
+	if (window.localStorage != undefined && localStorage.getItem("html") != undefined) {
+		editorHtml.setValue(localStorage.getItem("html"));
+	} else {
+		editorHtml.setValue("");
+	}
 
 	var editorCss = CodeMirror.fromTextArea(document.getElementById("css-code-textarea"), {
 		mode: "text/css",
@@ -40,8 +44,12 @@ jQuery(document).ready(function() {
     	autoFormatOnUncomment: true,
     	showAutoCompleteButton: true
 	});
-	editorCss.setValue("");
 	editorCss.setOption("theme", "abcdef");
+	if (window.localStorage != undefined && localStorage.getItem("css") != undefined) {
+		editorCss.setValue(localStorage.getItem("css"));
+	} else {
+		editorCss.setValue("");
+	}
 
 	var editorJs = CodeMirror.fromTextArea(document.getElementById("js-code-textarea"), {
 		mode: "text/javascript",
@@ -61,8 +69,12 @@ jQuery(document).ready(function() {
     	autoFormatOnUncomment: true,
     	showAutoCompleteButton: true
 	});
-	editorJs.setValue("");
 	editorJs.setOption("theme", "abcdef");
+	if (window.localStorage != undefined && localStorage.getItem("js") != undefined) {
+		editorJs.setValue(localStorage.getItem("js"));
+	} else {
+		editorJs.setValue("");
+	}
 
 	jQuery("#renderBtn").click(function(e) {
 		var htmlContent = editorHtml.getValue();
@@ -79,5 +91,30 @@ jQuery(document).ready(function() {
 		    </html>
 	  	`;
 	  	$("#frameRenderer").contents().find('body').html(src);
+	});
+
+
+	jQuery("#clearHtml").click(function(e) {
+		editorHtml.setValue("");
+	});
+
+	jQuery("#clearCss").click(function(e) {
+		editorCss.setValue("");
+	});
+
+	jQuery("#clearJs").click(function(e) {
+		editorJs.setValue("");
+	});
+
+	window.addEventListener("beforeunload", function (e) {
+		if (window.localStorage != undefined) {
+			localStorage.setItem("html", editorHtml.getValue());
+			localStorage.setItem("css", editorCss.getValue());
+			localStorage.setItem("js", editorJs.getValue());
+		}
+
+		var confirmationMessage = "\o/";
+		(e || window.event).returnValue = confirmationMessage; //Gecko + IE
+		return confirmationMessage;                            //Webkit, Safari, Chrome
 	});
 });

@@ -65,8 +65,19 @@
 			</div>
 		</div>
 		<div id="renderer">
-			<div class="row text-center margin-top-bottom">
-				<input id="renderBtn" type="submit" name="renderBtn" class="btn btn-info" value="Show">
+			<div class="row">
+				<div class="col-4 text-center">
+					<input id="clearHtml" type="submit" name="clearHtml" class="btn btn-warning" value="Clear HTML">
+				</div>
+				<div class="col-4 text-center">
+					<input id="clearCss" type="submit" name="clearCss" class="btn btn-warning" value="Clear CSS">
+					<div class="margin-top-bottom">
+						<input id="renderBtn" type="submit" name="renderBtn" class="btn btn-info" value="Run Code">
+					</div>
+				</div>
+				<div class="col-4 text-center">
+					<input id="clearJs" type="submit" name="clearJs" class="btn btn-warning" value="Clear JavaScript">
+				</div>
 			</div>
 			<div class="row margin-top-bottom">
 					<iframe width="100%" id="frameRenderer" src=""></iframe>
