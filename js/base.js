@@ -96,14 +96,23 @@ jQuery(document).ready(function() {
 
 	jQuery("#clearHtml").click(function(e) {
 		editorHtml.setValue("");
+		if (window.localStorage != undefined && localStorage.getItem("html") != undefined) {
+			localStorage.setItem("html", editorHtml.getValue());
+		}
 	});
 
 	jQuery("#clearCss").click(function(e) {
 		editorCss.setValue("");
+		if (window.localStorage != undefined && localStorage.getItem("css") != undefined) {
+			localStorage.setItem("css", editorCss.getValue());
+		}
 	});
 
 	jQuery("#clearJs").click(function(e) {
 		editorJs.setValue("");
+		if (window.localStorage != undefined && localStorage.getItem("js") != undefined) {
+			localStorage.setItem("js", editorJs.getValue());
+		}
 	});
 
 	window.addEventListener("beforeunload", function (e) {
